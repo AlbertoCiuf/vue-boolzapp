@@ -187,6 +187,29 @@ const app = new Vue({
           },
 
         ]
+      },
+      {
+        name: 'Michelangelo',
+        avatar: 'img/avatar_8.jpg',
+        visible: true,
+        messages: [
+          {
+            date: '15/11/2021 15:50:08',
+            text: 'Sei andato dal dottore?',
+            status: 'sent'
+          },
+          {
+            date: '15/11/2021 15:51:08',
+            text: 'Sìsì, tutto bene',
+            status: 'received'
+          },
+          {
+            date: '15/11/2021 15:55:08',
+            text: 'Per fortuna!',
+            status: 'sent'
+          },
+
+        ]
       }
     ],
     counter: 0,

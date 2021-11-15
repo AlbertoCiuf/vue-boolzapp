@@ -68,7 +68,7 @@
                 :class="{selected : counter === index}">
 
                   <div class="chat-list-element-left">
-                    <img :src="contact.avatar" alt="">
+                    <img :src="contact.avatar" :alt="contact.name">
                     <div class="chat-element-text">
                       <div class="contact-name">
                         <p>{{contact.name}}</p>
@@ -78,7 +78,7 @@
                       </div>
                     </div>
                   </div>
-                  
+
                   <div class="chat-date">
                     data
                   </div>
@@ -94,9 +94,56 @@
         <div class="main-right">
   
           <!-- barra utente chat aperta -->
+          <div class="open-chat-info">
+            
+              <div class="contact-propic">
+                <img src="img/avatar_1.jpg" alt="">
+                <div class="contact-info">
+                  <div class="contact-name">
+                    Michele
+                  </div>
+                  <div class="last-seen">
+                    Ultimo accesso *data*
+                  </div>
+                </div>
+              </div>
+              <div class="open-chat-controls">
+               <i class="fas fa-search"></i>
+               <i class="fas fa-paperclip"></i>
+               <i class="fas fa-ellipsis-v"></i>
+              </div>
+          </div>
+
           <!-- corpo chat -->
+          <div class="open-chat-body">
+            <ul>
+              <li class="sent">
+                Sei andato dal dottore?
+                <div class="message-date">
+                  *data*
+                </div>
+              </li>
+              <li class="received">
+                Sìsì, tutto bene
+                <div class="message-date">
+                  *data*
+                </div>
+              </li>
+              <li class="sent">
+                Per fortuna!
+                <div class="message-date">
+                  *data*
+                </div>
+              </li>
+            </ul>
+          </div>
+
           <!-- controllo chat: input scrittura messaggi -->
-  
+          <div class="open-chat-bottom">
+            <i class="far fa-smile"></i>
+            <input type="text" placeholder="Scrivi un messaggio">
+            <i class="fas fa-microphone"></i>
+          </div>
   
         </div>
       </div>
