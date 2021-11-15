@@ -58,7 +58,7 @@
             <input type="text" placeholder="Cerca o inizia una nuova chat">
           </div>
   
-          <!-- elenco chat -->
+          <!-- elenco chat, presente un solo li gestito tramite vue.js con v-for -->
           <div class="chat-list">
             <div class="chat-list-content">
               <ul>
@@ -66,6 +66,7 @@
                 v-for="(contact, index) in contacts"
                 @click="counter = index"
                 :class="{selected : counter === index}">
+
                   <div class="chat-list-element-left">
                     <img :src="contact.avatar" alt="">
                     <div class="chat-element-text">
@@ -77,6 +78,7 @@
                       </div>
                     </div>
                   </div>
+                  
                   <div class="chat-date">
                     data
                   </div>
