@@ -19,7 +19,7 @@ body {
 .container {
   height: 100vh;
   background: linear-gradient(#329689 15vh, #DEDCD3 0px, #D1DBDA 100%);
-  padding: 40px 0;
+  padding: 30px 0;
 
 }
 
@@ -38,12 +38,13 @@ body {
 }
 
 .main-left {
-  width: 30%;
-  background-color: tomato;
+  width: 35%;
+  background-color: #FAFAFA;
+  border-right: 1px solid #D6D6D6;
 }
 
 .main-right {
-  width: 70%;
+  width: 65%;
   background-color: khaki;
 }
 
@@ -86,9 +87,12 @@ body {
   padding-right: 20px;
 }
 
-.user-buttons i {
+.user-buttons {
   font-size: 24px;
   color: #B1B3B1;
+}
+
+.user-buttons i {
   cursor: pointer;
 }
 
@@ -119,3 +123,77 @@ body {
   color: #4D7385;
   cursor: pointer;
 }
+
+.search-bar {
+  height: 50px;
+  background-color: #FAFAFA;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+.search-bar .lens {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px 30px 10px 30px;
+  border: 1px solid #F5F5F5;
+  border-right: none;
+  color: #B1B3B1;
+}
+
+
+.search-bar input {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border: 1px solid #F5F5F5;
+  border-left: none;
+}
+
+.search-bar input::placeholder {
+  color: #c7c7c7;
+}
+
+
+.chat-list {
+  background-color: #fff;
+  border-right: 1px solid #E8E8E8;
+  margin-right: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+.chat-list ul li {
+  height: 80px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-list ul li.selected {
+  background-color: #E8EBEB;
+}
+
+.chat-list ul li img {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.chat-list-element-left {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-name {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.chat-preview, .chat-date {
+  font-size: 14px;
+  color: #c7c7c7;
+}
+
