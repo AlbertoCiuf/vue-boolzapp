@@ -240,18 +240,22 @@ input::placeholder {
 }
 
 .open-chat-body ul li {
+  position: relative;
   display: flex;
   align-items: center;
   width: 30%;
-  height: 60px;
+  min-height: 60px;
   border-radius: 20px;
   padding: 20px;
 }
 
 .message-date {
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  bottom: 2px;
+  right: 20px;
   margin-left: auto;
+  font-size: 14px;
+  color: #B5B8BA;
 }
 
 li.sent{
