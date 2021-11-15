@@ -247,6 +247,7 @@ input::placeholder {
   min-height: 60px;
   border-radius: 20px;
   padding: 20px;
+  margin-bottom: 5px;
 }
 
 .message-date {
