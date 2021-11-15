@@ -11,6 +11,10 @@
   clear: both;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 /* MAIN */
 .container {
   height: 100vh;
@@ -41,4 +45,77 @@
 .main-right {
   width: 70%;
   background-color: khaki;
+}
+
+.main-left .user-bar  {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background-color: #EBEBEB;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.user-section .propic {
+  height: 80px;
+  vertical-align: middle;
+  display: inline-block;
+  padding: 10px 0 10px 10px;
+}
+
+.user-section .propic img {
+  height: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.user-section p {
+  display: inline-block;
+  font-weight: bold;
+
+}
+
+.user-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+.user-buttons i {
+  font-size: 24px;
+  color: #B1B3B1;
+  cursor: pointer;
+}
+
+.notification-control {
+  height: 80px;
+  background-color: #8FDBFB;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  gap: 10px;
+}
+
+.notification-control i {
+  font-size: 22px;
+  background-color: #F2FBFF;
+  border-radius: 50%;
+  padding: 15px 10px;
+  color: #8FDBFB;
+}
+
+.notification-control .title {
+  line-height: 1.5;
+}
+
+.notification-control .subtitle {
+  font-size: 14px;
+  text-decoration: underline;
+  color: #4D7385;
+  cursor: pointer;
 }
