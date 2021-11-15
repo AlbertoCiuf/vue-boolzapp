@@ -1,5 +1,44 @@
+/* GLOBAL */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* MAIN */
+.container {
+  height: 100vh;
+  background: linear-gradient(#329689 15vh, #DEDCD3 0px, #D1DBDA 100%);
+  padding: 40px 0;
+
+}
+
+
+/* le altezze ed i colori di bg sono provvisori */
+.main-content {
+  width: 80%;
+  margin: 0 auto;
+  background-color: grey;
+  height: 860px;
+}
+
+.main-content .main-left, .main-content .main-right {
+  float: left;
+  height: 100%;
+}
+
+.main-left {
+  width: 30%;
+  background-color: tomato;
+}
+
+.main-right {
+  width: 70%;
+  background-color: khaki;
 }
