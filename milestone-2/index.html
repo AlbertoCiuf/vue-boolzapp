@@ -74,13 +74,15 @@
                         <p>{{contact.name}}</p>
                       </div>
                       <div class="chat-preview">
-                        Lorem, ipsum dolor.
+                        {{chatPreview = showChatPreview(index)}}
                       </div>
                     </div>
                   </div>
 
                   <div class="chat-date">
-                    data
+                    {{
+                      contact.messages[contact.messages.length-1].date
+                    }}
                   </div>
                 </li>
                 
@@ -97,13 +99,16 @@
           <div class="open-chat-info">
             
               <div class="contact-propic">
-                <img :src="contacts[counter].avatar" :alt="contacts[counter].name">
+                <img :src="contacts[counter].avatar" 
+                :alt="contacts[counter].name">
                 <div class="contact-info">
                   <div class="contact-name">
                     {{contacts[counter].name}}
                   </div>
                   <div class="last-seen">
-                    Ultimo accesso *data*
+                    Ultimo accesso:
+                    <!-- imposto come ultimo accesso la data dell'ultimo messaggio del contatto, risalendoci tramite le chiavi degli oggetti presenti nell'array -->
+                    {{contacts[counter].messages[contacts[counter].messages.length-1].date}}
                   </div>
                 </div>
               </div>
