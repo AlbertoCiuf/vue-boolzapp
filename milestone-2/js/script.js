@@ -34,17 +34,17 @@ const app = new Vue({
         messages: [
           {
             date: '15/11/2021 15:50:08',
-            text: 'Sei andato dal dottore?',
+            text: 'Hai mangiato oggi?',
             status: 'sent'
           },
           {
             date: '15/11/2021 15:51:08',
-            text: 'Sìsì, tutto bene',
+            text: 'Sìsì, tranquilla',
             status: 'received'
           },
           {
             date: '15/11/2021 15:55:08',
-            text: 'Per fortuna!',
+            text: 'Perfetto',
             status: 'sent'
           },
 
@@ -57,19 +57,14 @@ const app = new Vue({
         messages: [
           {
             date: '15/11/2021 15:50:08',
-            text: 'Sei andato dal dottore?',
+            text: 'Tutto bene?',
             status: 'sent'
           },
           {
             date: '15/11/2021 15:51:08',
             text: 'Sìsì, tutto bene',
             status: 'received'
-          },
-          {
-            date: '15/11/2021 15:55:08',
-            text: 'Per fortuna!',
-            status: 'sent'
-          },
+          }
 
         ]
       },
@@ -80,7 +75,7 @@ const app = new Vue({
         messages: [
           {
             date: '15/11/2021 15:50:08',
-            text: 'Sei andato dal dottore?',
+            text: 'Hai fatto il compito?',
             status: 'sent'
           },
           {
@@ -90,7 +85,7 @@ const app = new Vue({
           },
           {
             date: '15/11/2021 15:55:08',
-            text: 'Per fortuna!',
+            text: 'Grande',
             status: 'sent'
           },
 
@@ -103,7 +98,7 @@ const app = new Vue({
         messages: [
           {
             date: '15/11/2021 15:50:08',
-            text: 'Sei andato dal dottore?',
+            text: '  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur laborum saepe provident incidunt delectus ratione optio reiciendis voluptatem, impedit qui.',
             status: 'sent'
           },
           {
@@ -126,7 +121,7 @@ const app = new Vue({
         messages: [
           {
             date: '15/11/2021 15:50:08',
-            text: 'Sei andato dal dottore?',
+            text: 'Sei andata dalla nonna?',
             status: 'sent'
           },
           {
@@ -172,17 +167,17 @@ const app = new Vue({
         messages: [
           {
             date: '15/11/2021 15:50:08',
-            text: 'Sei andato dal dottore?',
+            text: 'Che fai stasera?',
             status: 'sent'
           },
           {
             date: '15/11/2021 15:51:08',
-            text: 'Sìsì, tutto bene',
+            text: 'Esco!',
             status: 'received'
           },
           {
             date: '15/11/2021 15:55:08',
-            text: 'Per fortuna!',
+            text: 'Va bene',
             status: 'sent'
           },
 

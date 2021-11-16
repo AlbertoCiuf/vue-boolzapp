@@ -97,10 +97,10 @@
           <div class="open-chat-info">
             
               <div class="contact-propic">
-                <img src="img/avatar_1.jpg" alt="">
+                <img :src="contacts[counter].avatar" :alt="contacts[counter].name">
                 <div class="contact-info">
                   <div class="contact-name">
-                    Michele
+                    {{contacts[counter].name}}
                   </div>
                   <div class="last-seen">
                     Ultimo accesso *data*
@@ -117,25 +117,15 @@
           <!-- corpo chat -->
           <div class="open-chat-body">
             <ul>
-              <li class="sent">
-                Sei andato dal dottore?
+              <li 
+              v-for="message in contacts[counter].messages"
+              :class="message.status">
+                {{message.text}}
                 <div class="message-date">
-                  *data*
+                  {{message.date}}
                 </div>
               </li>
-              <li class="received">
-                Sìsì, tutto bene
-                <div class="message-date">
-                  *data*
-                </div>
-              </li>
-              <li class="sent">
-                Per fortuna!
-                <div class="message-date">
-                  *data*
-                </div>
-              </li>
-          
+
             </ul>
           </div>
 
