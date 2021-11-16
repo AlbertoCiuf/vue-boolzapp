@@ -185,8 +185,12 @@ input::placeholder {
   border-bottom: 1px solid #F5F5F5;
 }
 
-.chat-list ul li.selected, .chat-list ul li:hover  {
+.chat-list ul li.selected {
   background-color: #E8EBEB;
+}
+
+.chat-list ul li:hover {
+  background-color: #f4f5f5;
 }
 
 .chat-list ul li img {

@@ -75,17 +75,17 @@ const app = new Vue({
         messages: [
           {
             date: '15/11/2021 15:50:08',
-            text: 'Hai fatto il compito?',
+            text: 'Ehi',
             status: 'sent'
           },
           {
             date: '15/11/2021 15:51:08',
-            text: 'Sìsì, tutto bene',
+            text: 'Questo è incredibile! Inoltra questo messaggio a 10 persone entro 3 minuti e non accadrà niente! Mio cugino ha provato tre volte e ha sempre funzionato. Funziona veramente! Fallo girare! Le persone devono saperlo!',
             status: 'received'
           },
           {
             date: '15/11/2021 12:34:08',
-            text: 'Grande',
+            text: 'Oh mamma',
             status: 'sent'
           },
 
@@ -98,17 +98,17 @@ const app = new Vue({
         messages: [
           {
             date: '15/11/2021 15:50:08',
-            text: '  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur laborum saepe provident incidunt delectus ratione optio reiciendis voluptatem, impedit qui.',
+            text: 'Ehi',
             status: 'sent'
           },
           {
             date: '15/11/2021 15:51:08',
-            text: 'Sìsì, tutto bene',
+            text: 'Come stai?',
             status: 'received'
           },
           {
             date: '15/11/2021 21:05:08',
-            text: 'Per fortuna!',
+            text: 'Bene, grazie!',
             status: 'sent'
           },
 
@@ -214,11 +214,15 @@ const app = new Vue({
   methods: {
     //funzione che, dato un parametro index, restituisce in output una porzione del testo dell'ultimo messaggio del contatto scelto, seguita da tre puntini di sospensione nel caso in cui la lunghezza dell'ultimo messaggio sia superiore a 8 caratteri
     showChatPreview(index){
+
       let prev ='';
-      if (this.contacts[index].messages[this.contacts[index].messages.length-1].text.length <= 8 ){
-        prev = this.contacts[index].messages[this.contacts[index].messages.length-1].text 
+      
+      let singMessage = this.contacts[index].messages[this.contacts[index].messages.length-1].text;
+
+      if (singMessage.length <= 8 ){
+        prev = singMessage;
       } else {
-        prev = this.contacts[index].messages[this.contacts[index].messages.length-1].text.substring(0,8)+"..."
+        prev = singMessage.substring(0,8)+"...";
       }
       return prev
     }
