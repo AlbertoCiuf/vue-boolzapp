@@ -208,7 +208,8 @@ const app = new Vue({
       }
     ],
     counter: 0,
-    chatPreview:''
+    chatPreview:'',
+    newMsg: '',
   },
 
   methods: {
@@ -225,6 +226,28 @@ const app = new Vue({
         prev = singMessage.substring(0,8)+"...";
       }
       return prev
+    },
+
+    newMessage(currentContact){
+      console.log('invio');
+      let userSentMsg = {
+        date:'',
+        text: this.newMsg,
+        status: 'sent'
+      }
+
+      if (this.newMsg.trim() != '') {
+        currentContact.messages.push(userSentMsg);
+        this.newMsg='';
+        setTimeout(() =>{
+          let autoReply = {
+            date:'',
+            text: 'Okay!',
+            status: 'received'
+          }
+        currentContact.messages.push(autoReply);
+        }, 1000);
+      }
     }
   }
 
