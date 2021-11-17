@@ -129,13 +129,18 @@
           <!-- corpo chat -->
           <div class="open-chat-body">
             <ul>
+              
               <li 
               v-for="message in contacts[counter].messages"
               :class="message.status">
                 {{message.text}}
+                
                 <div class="message-date">
                   {{message.date}}
                 </div>
+
+                <i class="fas fa-chevron-down"></i>
+
               </li>
 
             </ul>

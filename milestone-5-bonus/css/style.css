@@ -271,6 +271,19 @@ input::placeholder {
   color: #B5B8BA;
 }
 
+.open-chat-body ul li .fa-chevron-down {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  color: #B1B3B1;
+  cursor: pointer;
+  display: none;
+}
+
+.open-chat-body ul li:hover .fa-chevron-down {
+  display: block;
+}
+
 li.sent{
   background-color: #D4FABB;
   margin-left: auto;
