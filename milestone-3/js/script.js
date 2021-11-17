@@ -213,6 +213,7 @@ const app = new Vue({
   },
 
   methods: {
+
     //funzione che, dato un parametro index, restituisce in output una porzione del testo dell'ultimo messaggio del contatto scelto, seguita da tre puntini di sospensione nel caso in cui la lunghezza dell'ultimo messaggio sia superiore a 8 caratteri
     showChatPreview(index){
 
@@ -228,26 +229,65 @@ const app = new Vue({
       return prev
     },
 
+
+    //funzione che, dato in input il contatto corrente, pusha all'array di messaggi corrispondente il valore di ciò che viene inserito dall'utente nella casella di testo, alla pressione del tasto invio sulla tastiera. Dopo un secondo, il computer risponderà "okay!", con lo stesso meccanismo. nel caso in cui venga premuto il tasto invio senza scrivere niente nella casella di testo, non succede nulla.
     newMessage(currentContact){
-      console.log('invio');
+
+      let msgDate = this.getDateAndTime();
+
       let userSentMsg = {
-        date:'',
+        date: msgDate,
         text: this.newMsg,
         status: 'sent'
       }
 
-      if (this.newMsg.trim() != '') {
+      if (this.newMsg.trim() !== '') {
         currentContact.messages.push(userSentMsg);
         this.newMsg='';
         setTimeout(() =>{
           let autoReply = {
-            date:'',
+            date: msgDate,
             text: 'Okay!',
             status: 'received'
           }
         currentContact.messages.push(autoReply);
         }, 1000);
       }
+    },
+
+    //funzione che crea e restituisce la data completa (giorno/mese/anno ora:minuti:secondi)
+    getDateAndTime(){
+      const d = new Date();
+
+      //creo una variabile per ogni elemento della data, per leggibilità
+      let currentDay = d.getDate();
+      let currentMonth = d.getMonth()+1;
+      let currentYear = d.getFullYear();
+      let currentHour = d.getHours();
+      let currentMinutes = d.getMinutes();
+      let currentSeconds = d.getSeconds();
+
+
+      //formatto con la doppia cifra se il numero interessato è minore di 10
+      if (currentDay < 10) {
+        currentDay = '0'+currentDay;
+      }
+      if (currentMonth < 10) {
+        currentMonth = '0'+currentMonth;
+      }
+      if (currentHour < 10) {
+        currentHour = '0'+currentHour;
+      }
+      if (currentMinutes < 10) {
+        currentMinutes = '0'+currentMinutes;
+      }
+      if (currentSeconds < 10) {
+        currentSeconds = '0'+currentSeconds;
+      }
+      
+      //compongo e restituisco la data completa
+      return completeDate = `${currentDay}/${currentMonth}/${currentYear} ${currentHour}:${currentMinutes}:${currentSeconds}`
+
     }
   }
 

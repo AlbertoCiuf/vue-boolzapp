@@ -139,10 +139,12 @@
           <!-- controllo chat: input scrittura messaggi -->
           <div class="open-chat-bottom">
             <i class="far fa-smile"></i>
+
             <input
             v-model="newMsg"
             @keyup.enter="newMessage(contacts[counter])"
              type="text" placeholder="Scrivi un messaggio">
+             
             <i class="fas fa-microphone"></i>
           </div>
   
