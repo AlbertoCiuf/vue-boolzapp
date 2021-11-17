@@ -210,7 +210,8 @@ const app = new Vue({
     counter: 0,
     chatPreview:'',
     newMsg: '',
-    searchedValue:''
+    searchedValue:'',
+    dropDShown:false
   },
 
   methods: {
@@ -302,7 +303,10 @@ const app = new Vue({
         }
       }
       // console.log(this.searchedValue);
-    }
+    },
+
+   
+
   }
 
 

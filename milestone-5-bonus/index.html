@@ -131,7 +131,7 @@
             <ul>
               
               <li 
-              v-for="message in contacts[counter].messages"
+              v-for="(message, index) in contacts[counter].messages"
               :class="message.status">
                 {{message.text}}
                 
@@ -139,8 +139,17 @@
                   {{message.date}}
                 </div>
 
-                <i class="fas fa-chevron-down"></i>
+                  <i 
+                  @click="dropDShown = !dropDShown"
+                  class="fas fa-chevron-down"></i>
+                  <div class="dropdown-content"
+                  :class="{shown : dropDShown}">
 
+                  <p>Info messaggio</p>
+                  <p>Elimina messaggio</p>
+
+                  </div>
+                  
               </li>
 
             </ul>

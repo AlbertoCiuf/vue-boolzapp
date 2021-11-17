@@ -280,6 +280,37 @@ input::placeholder {
   display: none;
 }
 
+
+
+.dropdown-content {
+
+  display: none;
+
+  background-color: #E6DDD5;
+  font-size: 14px;
+  width: 150px;
+  height: 70px;
+  position: absolute;
+  top: -60px;
+  right: -40px;
+  padding-top: 10px;
+  text-align: center;
+  box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+}
+
+.dropdown-content p {
+  color: #a8a9a8;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.shown {
+  display: block !important;
+}
+
+
 .open-chat-body ul li:hover .fa-chevron-down {
   display: block;
 }
