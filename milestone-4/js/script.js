@@ -294,7 +294,7 @@ const app = new Vue({
     triggerSearch(){
       
       for (let contact of this.contacts) {
-        if (!contact.name.toLowerCase().includes(this.searchedValue.toLowerCase(), -1)){
+        if (!contact.name.toLowerCase().includes(this.searchedValue.toLowerCase())){
           contact.visible=false;
         }
         if (this.searchedValue==='') {
