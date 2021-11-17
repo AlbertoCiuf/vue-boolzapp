@@ -210,6 +210,7 @@ const app = new Vue({
     counter: 0,
     chatPreview:'',
     newMsg: '',
+    searchedValue:''
   },
 
   methods: {
@@ -288,7 +289,21 @@ const app = new Vue({
       //compongo e restituisco la data completa
       return completeDate = `${currentDay}/${currentMonth}/${currentYear} ${currentHour}:${currentMinutes}:${currentSeconds}`
 
+    },
+
+    triggerSearch(){
+      
+      for (let contact of this.contacts) {
+        if (!contact.name.toLowerCase().includes(this.searchedValue.toLowerCase(), -1)){
+          contact.visible=false;
+        }
+        if (this.searchedValue==='') {
+          contact.visible=true;
+        }
+      }
+      // console.log(this.searchedValue);
     }
   }
+
 
 });
