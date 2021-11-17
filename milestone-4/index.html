@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+
+  <link rel="shortcut icon" href="img/favicon.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>Boolzapp</title>
+</head>
+
+<body>
+ 
+  <div id="app">
+
+    <div class="container">
+      <!-- contenitore principale -->
+      <div class="main-content clearfix">
+  
+        <!-- blocco a sinistra con nome utente, pop up notifiche, searchbar ed elenco chat -->
+        <div class="main-left">
+  
+          <!-- barra utente -->
+          <div class="user-bar">
+            <div class="user-section">
+              <div class="propic">  
+                <img src="img/avatar_io.jpg" alt="Immagine profilo utente">
+              </div>
+              <p>Nome Utente</p>
+            </div>
+            <div class="user-buttons">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+  
+          <!-- controllo notifiche -->
+          <div class="notification-control">
+            <i class="fas fa-bell-slash"></i>
+            <div class="notification-control-text">
+              <p class="title">Ricevi notifiche di nuovi messaggi</p>
+              <p class="subtitle">Attiva notifiche desktop</p>
+            </div>
+          </div>
+  
+          <!-- barra di ricerca -->
+          <div class="search-bar">
+            <div class="lens">
+              <i class="fas fa-search"></i>
+            </div>
+            <input type="text" placeholder="Cerca o inizia una nuova chat">
+          </div>
+  
+          <!-- elenco chat, presente un solo li gestito tramite vue.js con v-for -->
+          <div class="chat-list">
+            <div class="chat-list-content">
+              <ul>
+                <li 
+                v-for="(contact, index) in contacts"
+                @click="counter = index"
+                :class="{selected : counter === index}">
+
+                  <div class="chat-list-element-left">
+                    <img :src="contact.avatar" :alt="contact.name">
+                    <div class="chat-element-text">
+                      <div class="contact-name">
+                        <p>{{contact.name}}</p>
+                      </div>
+                      <div class="chat-preview">
+                        {{chatPreview = showChatPreview(index)}}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="chat-date">
+                    {{
+                      contact.messages[contact.messages.length-1].date
+                    }}
+                  </div>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+  
+        <!-- blocco di destra con chat aperta -->
+        <div class="main-right">
+  
+          <!-- barra utente chat aperta -->
+          <div class="open-chat-info">
+            
+              <div class="contact-propic">
+                <img :src="contacts[counter].avatar" 
+                :alt="contacts[counter].name">
+                <div class="contact-info">
+                  <div class="contact-name">
+                    {{contacts[counter].name}}
+                  </div>
+                  <div class="last-seen">
+                    Ultimo accesso:
+                    <!-- imposto come ultimo accesso la data dell'ultimo messaggio del contatto, risalendoci tramite le chiavi degli oggetti presenti nell'array -->
+                    {{contacts[counter].messages[contacts[counter].messages.length-1].date}}
+                  </div>
+                </div>
+              </div>
+              <div class="open-chat-controls">
+               <i class="fas fa-search"></i>
+               <i class="fas fa-paperclip"></i>
+               <i class="fas fa-ellipsis-v"></i>
+              </div>
+          </div>
+
+          <!-- corpo chat -->
+          <div class="open-chat-body">
+            <ul>
+              <li 
+              v-for="message in contacts[counter].messages"
+              :class="message.status">
+                {{message.text}}
+                <div class="message-date">
+                  {{message.date}}
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+          <!-- controllo chat: input scrittura messaggi -->
+          <div class="open-chat-bottom">
+            <i class="far fa-smile"></i>
+
+            <input
+            v-model="newMsg"
+            @keyup.enter="newMessage(contacts[counter])"
+             type="text" placeholder="Scrivi un messaggio">
+             
+            <i class="fas fa-microphone"></i>
+          </div>
+  
+        </div>
+      </div>
+  
+  
+  
+    </div>
+
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
