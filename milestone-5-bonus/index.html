@@ -105,10 +105,13 @@
         <div class="main-right">
   
           <!-- barra utente chat aperta -->
-          <div class="open-chat-info">
+          <div class="open-chat-info"
+          :class="{open : isOpen}">
             
               <div class="contact-propic">
-                <img :src="contacts[counter].avatar" 
+                <img @click="isOpen = !isOpen"
+                :class ="{big : isOpen}"
+                :src="contacts[counter].avatar" 
                 :alt="contacts[counter].name">
                 <div class="contact-info">
                   <div class="contact-name">
@@ -131,7 +134,8 @@
           </div>
 
           <!-- corpo chat -->
-          <div class="open-chat-body">
+          <div class="open-chat-body"
+          :class="{large: isOpen}">
             <ul>
               
               <li 

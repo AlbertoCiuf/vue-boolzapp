@@ -216,7 +216,8 @@ const app = new Vue({
     chatPreviewDate:'',
     newMsg: '',
     searchedValue:'',
-    showDDValue: -1
+    showDDValue: -1,
+    isOpen: false
   },
 
   methods: {
@@ -294,7 +295,8 @@ const app = new Vue({
     //funzione che elimina il messaggio selezionato, risalendoci tramite il parametro 'index', al click del tasto "elimina messaggio" del dropdown menu
     deleteMessage(index) {
       this.contacts[this.counter].messages.splice(index, 1);
-    }
+    },
+
 
   }
 

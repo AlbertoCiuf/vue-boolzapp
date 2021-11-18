@@ -229,12 +229,34 @@ input::placeholder {
   justify-content: space-between;
   height: 80px;
   background-color: #EBEBEB;
+  transition: all .5s;
+}
+
+.open-chat-info.open {
+  height: 160px;
+  align-items: center;
+  transition: all .5s;
 }
 
 .contact-propic {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.contact-propic img {
+  transition: all .5s;
+}
+
+.contact-propic img.big {
+  transform: scale(4);
+  border-radius: 0;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-right: 100px;
+  margin-top: -40px;
+  transition: all .5s;
+  align-self: flex-start;
 }
 
 .contact-propic .last-seen {
@@ -247,6 +269,12 @@ input::placeholder {
   background-image: url(../img/mine.jpg);
   /* padding-top: 50px; */
   overflow-y: scroll;
+  transition: all .5s;
+}
+
+.open-chat-body.large {
+  height: calc(100% - 240px);
+  transition: all .5s;
 }
 
 .open-chat-body ul {
@@ -346,6 +374,17 @@ li.received {
   color: #687274;
   padding: 20px;
   cursor: pointer;
+  transition: all .3s;
+}
+
+.open-chat-bottom i.fa-smile:hover {
+  color: #474747;
+  transform: scale(1.2);
+}
+
+.open-chat-bottom i.fa-microphone:hover {
+  color: red;
+  transform: scale(1.2);
 }
 
 .open-chat-bottom input {
