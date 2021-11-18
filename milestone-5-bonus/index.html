@@ -140,13 +140,15 @@
                 </div>
 
                   <i 
-                  @click="dropDShown = !dropDShown"
+                  @click="showDropDown(index)"
                   class="fas fa-chevron-down"></i>
                   <div class="dropdown-content"
-                  :class="{shown : dropDShown}">
+                  v-show="showDDValue === index">
 
                   <p>Info messaggio</p>
-                  <p>Elimina messaggio</p>
+                  <p @click="deleteMessage(index),
+                  showDropDown(index)"
+                  >Elimina messaggio</p>
 
                   </div>
                   
@@ -162,7 +164,7 @@
             <input
             v-model="newMsg"
             @keyup.enter="newMessage(contacts[counter])"
-             type="text" placeholder="Scrivi un messaggio">
+            type="text" placeholder="Scrivi un messaggio">
              
             <i class="fas fa-microphone"></i>
           </div>

@@ -216,7 +216,7 @@ const app = new Vue({
     chatPreview:'',
     newMsg: '',
     searchedValue:'',
-    dropDShown:false
+    showDDValue: -1
   },
 
   methods: {
@@ -273,6 +273,17 @@ const app = new Vue({
       }
       // console.log(this.searchedValue);
     },
+
+    //funzione che controlla, tramite un operatore ternario quale messaggio è stato cliccato e di conseguenza su quale messaggio far comparire il menù a tendina per l'eventuale eliminazione
+    //alla variabile showDDValue, di default -1, viene assegnato il valore dell'indice del messaggio cliccato e tramite il v-show nell'html, il menù compare solo in questo caso e sul messaggio selezionato.
+    showDropDown(index) {
+      this.showDDValue === -1 ? this.showDDValue = index : this.showDDValue = -1;
+    },
+
+    //funzione che elimina il messaggio selezionato, risalendoci tramite il parametro 'index', al click del tasto "elimina messaggio" del dropdown menu
+    deleteMessage(index) {
+      this.contacts[this.counter].messages.splice(index, 1);
+    }
 
   }
 

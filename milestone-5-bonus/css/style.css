@@ -246,7 +246,11 @@ input::placeholder {
   height: calc(100% - 160px);
   background-image: url(../img/mine.jpg);
   /* padding-top: 50px; */
-  overflow: auto;
+  overflow-y: scroll;
+}
+
+.open-chat-body ul {
+  height: 100%;
 }
 
 .open-chat-body ul li {
@@ -287,35 +291,30 @@ input::placeholder {
 
 .dropdown-content {
 
-  display: none;
-
-  background-color: #E6DDD5;
+  background-color: #fff;
   font-size: 14px;
   width: 150px;
-  height: 70px;
+  height: 80px;
   position: absolute;
-  top: -60px;
+  top: 30px;
   right: -40px;
   padding-top: 10px;
   text-align: center;
-  box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
 
 .dropdown-content p {
-  color: #a8a9a8;
-  padding: 5px;
+  color: #474747;
+  padding: 8px;
   cursor: pointer;
 }
 
 .dropdown-content p:hover {
   color: black;
+  background-color: #f4f5f5;
 }
 
-.shown {
-  display: block !important;
-}
 
 
 .open-chat-body ul li:hover .fa-chevron-down {
