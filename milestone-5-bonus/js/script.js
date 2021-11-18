@@ -2,7 +2,6 @@
 dayjs.extend(window.dayjs_plugin_customParseFormat);
 dayjs.locale('it');
 
-
 const app = new Vue({
 
   el: '#app',
@@ -214,6 +213,7 @@ const app = new Vue({
     ],
     counter: 0,
     chatPreview:'',
+    chatPreviewDate:'',
     newMsg: '',
     searchedValue:'',
     showDDValue: -1
@@ -225,8 +225,10 @@ const app = new Vue({
     showChatPreview(index){
 
       let prev ='';
-      
-      let singMessage = this.contacts[index].messages[this.contacts[index].messages.length-1].text;
+      let singMessage ='';
+      if (this.contacts[index].messages.length > 0) {
+        singMessage = this.contacts[index].messages[this.contacts[index].messages.length-1].text;
+      } 
 
       if (singMessage.length <= 8 ){
         prev = singMessage;
@@ -234,6 +236,15 @@ const app = new Vue({
         prev = singMessage.substring(0,8)+"...";
       }
       return prev
+    },
+
+    //funzione che, dato un parametro index, restituisce il valore della key 'date' dell'ultimo elemento dell'array 'messages' del contatto selezionato in base al parametro passato.
+    showChatPreviewDate(index) {
+      let chatDate='';
+      if (this.contacts[index].messages.length > 0){
+        chatDate = this.contacts[index].messages[this.contacts[index].messages.length-1].date;
+      }
+      return chatDate;
     },
 
     //funzione che, dato in input il contatto corrente, pusha all'array di messaggi corrispondente il valore di ciò che viene inserito dall'utente nella casella di testo, alla pressione del tasto invio sulla tastiera. Dopo un secondo, il computer risponderà "okay!", con lo stesso meccanismo. nel caso in cui venga premuto il tasto invio senza scrivere niente nella casella di testo, non succede nulla.

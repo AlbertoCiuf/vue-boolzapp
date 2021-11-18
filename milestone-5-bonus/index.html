@@ -81,14 +81,16 @@
                         <p>{{contact.name}}</p>
                       </div>
                       <div class="chat-preview">
-                        {{chatPreview = showChatPreview(index)}}
+                        {{
+                          chatPreview = showChatPreview(index)
+                        }}
                       </div>
                     </div>
                   </div>
 
                   <div class="chat-date">
                     {{
-                      contact.messages[contact.messages.length-1].date
+                      chatPreviewDate = showChatPreviewDate(index)
                     }}
                   </div>
                 </li>
@@ -115,7 +117,9 @@
                   <div class="last-seen">
                     Ultimo accesso:
                     <!-- imposto come ultimo accesso la data dell'ultimo messaggio del contatto, risalendoci tramite le chiavi degli oggetti presenti nell'array -->
-                    {{contacts[counter].messages[contacts[counter].messages.length-1].date}}
+                    {{
+                      chatPreviewDate = showChatPreviewDate(counter)
+                    }}
                   </div>
                 </div>
               </div>
@@ -146,6 +150,7 @@
                   v-show="showDDValue === index">
 
                   <p>Info messaggio</p>
+
                   <p @click="deleteMessage(index),
                   showDropDown(index)"
                   >Elimina messaggio</p>
