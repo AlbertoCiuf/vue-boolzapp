@@ -239,11 +239,9 @@ const app = new Vue({
     //funzione che, dato in input il contatto corrente, pusha all'array di messaggi corrispondente il valore di ciò che viene inserito dall'utente nella casella di testo, alla pressione del tasto invio sulla tastiera. Dopo un secondo, il computer risponderà "okay!", con lo stesso meccanismo. nel caso in cui venga premuto il tasto invio senza scrivere niente nella casella di testo, non succede nulla.
     newMessage(currentContact){
 
-      //assegno ad una variabile la data corrente, ricavata tramite la libreria day.js
-      let msgDate = dayjs().format('DD/MM/YYYY HH:mm:ss');
-
+      //imposto come valore della key 'date' la data corrente, ricavata tramite la libreria dayjs
       let userSentMsg = {
-        date: msgDate,
+        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         text: this.newMsg,
         status: 'sent'
       }
@@ -253,7 +251,7 @@ const app = new Vue({
         this.newMsg='';
         setTimeout(() =>{
           let autoReply = {
-            date: msgDate,
+            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
             text: 'Okay!',
             status: 'received'
           }
