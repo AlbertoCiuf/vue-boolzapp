@@ -245,7 +245,7 @@ input::placeholder {
 .open-chat-body {
   height: calc(100% - 160px);
   background-image: url(../img/mine.jpg);
-  padding-top: 50px;
+  /* padding-top: 50px; */
   overflow: auto;
 }
 
@@ -260,6 +260,9 @@ input::placeholder {
   margin-bottom: 5px;
 }
 
+.open-chat-body ul li:first-child {
+  margin-top: 65px;
+}
 
 
 .message-date {
@@ -304,6 +307,10 @@ input::placeholder {
   color: #a8a9a8;
   padding: 5px;
   cursor: pointer;
+}
+
+.dropdown-content p:hover {
+  color: black;
 }
 
 .shown {

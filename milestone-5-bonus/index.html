@@ -72,7 +72,7 @@
                 v-for="(contact, index) in contacts"
                 @click="counter = index"
                 :class="{selected : counter === index}"
-                v-if="(contact.visible === true) || (searchedValue === '')">
+                v-if="(contact.visible === true)">
 
                   <div class="chat-list-element-left">
                     <img :src="contact.avatar" :alt="contact.name">
@@ -176,9 +176,17 @@
 
   </div>
 
+  <!-- import dayjs -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
+  <!-- plugin formattazione date dayjs -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/plugin/customParseFormat.js"></script>
+  <!-- formato italiano dayjs -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/locale/it.js"></script>
 
 
+  <!-- import vuejs -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
   <script src="js/script.js"></script>
 </body>
 </html>

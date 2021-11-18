@@ -1,3 +1,8 @@
+//inizializzo dayjs e lo imposto in italiano
+dayjs.extend(window.dayjs_plugin_customParseFormat);
+dayjs.locale('it');
+
+
 const app = new Vue({
 
   el: '#app',
@@ -231,11 +236,11 @@ const app = new Vue({
       return prev
     },
 
-
     //funzione che, dato in input il contatto corrente, pusha all'array di messaggi corrispondente il valore di ciò che viene inserito dall'utente nella casella di testo, alla pressione del tasto invio sulla tastiera. Dopo un secondo, il computer risponderà "okay!", con lo stesso meccanismo. nel caso in cui venga premuto il tasto invio senza scrivere niente nella casella di testo, non succede nulla.
     newMessage(currentContact){
 
-      let msgDate = this.getDateAndTime();
+      //assegno ad una variabile la data corrente, ricavata tramite la libreria day.js
+      let msgDate = dayjs().format('DD/MM/YYYY HH:mm:ss');
 
       let userSentMsg = {
         date: msgDate,
@@ -257,41 +262,7 @@ const app = new Vue({
       }
     },
 
-    //funzione che crea e restituisce la data completa (giorno/mese/anno ora:minuti:secondi)
-    getDateAndTime(){
-      const d = new Date();
-
-      //creo una variabile per ogni elemento della data, per leggibilità
-      let currentDay = d.getDate();
-      let currentMonth = d.getMonth()+1;
-      let currentYear = d.getFullYear();
-      let currentHour = d.getHours();
-      let currentMinutes = d.getMinutes();
-      let currentSeconds = d.getSeconds();
-
-
-      //formatto con la doppia cifra se il numero interessato è minore di 10
-      if (currentDay < 10) {
-        currentDay = '0'+currentDay;
-      }
-      if (currentMonth < 10) {
-        currentMonth = '0'+currentMonth;
-      }
-      if (currentHour < 10) {
-        currentHour = '0'+currentHour;
-      }
-      if (currentMinutes < 10) {
-        currentMinutes = '0'+currentMinutes;
-      }
-      if (currentSeconds < 10) {
-        currentSeconds = '0'+currentSeconds;
-      }
-      
-      //compongo e restituisco la data completa
-      return completeDate = `${currentDay}/${currentMonth}/${currentYear} ${currentHour}:${currentMinutes}:${currentSeconds}`
-
-    },
-
+    //funzione che permette di visualizzare solo le chat relative ai contatti che contengono nel nome ciò che l'utente inserisce nel campo input della barra di ricerca
     triggerSearch(){
       
       for (let contact of this.contacts) {
@@ -305,9 +276,13 @@ const app = new Vue({
       // console.log(this.searchedValue);
     },
 
-   
-
   }
 
 
 });
+
+
+
+
+
+
