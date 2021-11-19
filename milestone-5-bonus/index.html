@@ -70,7 +70,9 @@
               <ul>
                 <li 
                 v-for="(contact, index) in contacts"
-                @click="counter = index"
+                @click="(counter = index), 
+                (isOpen = false), 
+                (showDDValue = -1)"
                 :class="{selected : counter === index}"
                 v-if="(contact.visible === true)">
 
